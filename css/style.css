@@ -1,0 +1,9 @@
+body {
+    box-sizing: border-box;
+    padding: 30px;
+    background: #282c34;
+    color: #abb2bf;
+    font-family: "Lucida Console", "Courier New", monospace;
+}
+
+p { margin: 0; }
