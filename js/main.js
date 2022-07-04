@@ -1,8 +1,9 @@
-import { Banner } from './elements.js';
+import { Banner, Command } from './elements.js';
 
 let banner = (new Banner()).getBanner();
+let command = (new Command()).getCommand();
 
 window.onload = function afterWebPageLoad() { 
-    console.log("entrei");
-    document.getElementsByTagName('body')[0].appendChild(banner);
+    document.getElementById("terminal").appendChild(banner);
+    document.getElementById("terminal").appendChild(command);
 }
