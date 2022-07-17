@@ -15,10 +15,10 @@ export class Banner {
         banner_welcome.innerHTML += '██      ██  ████   ██     ██     ██    ██ ██      ██ ████    ██        /\\_  /____|____________) \n';
         banner_welcome.innerHTML += '██  ██  ██  ██     ██     ██     ██    ██ ██      ██ ██               /   |___________________| \n';
         banner_welcome.innerHTML += '  ██  ██    ██████ ██████   ████   ████   ██      ██ ██████  ██      /__    | )(            )(  \n';
-        banner_welcome.innerHTML += '                                                                     | |\\  :| )(            )(  \n';
+        banner_welcome.innerHTML += '                                                                     | |\\  :| )(            )(  \n\n';
 
         let banner_text: HTMLParagraphElement = document.createElement('p');
-        banner_text.innerHTML = 'Hi! My name is Fernando Rego and this is my web terminal.\n';
+        banner_text.innerHTML  = 'Hi! My name is Fernando Rego and this is my web terminal.\n';
         banner_text.innerHTML += 'Type help to display the list of all available commands';
 
         this.banner.appendChild(banner_welcome);
@@ -44,7 +44,7 @@ export class Command {
 
     setText(): void {
         let text: HTMLParagraphElement = document.createElement('p');
-        text.innerText = 'guest@github.nando.io:~$ █   ';
+        text.innerText = 'guest@fernandorego.io:~$ █   ';
         
         this.command.appendChild(text);
     }
