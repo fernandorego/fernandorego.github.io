@@ -9,7 +9,10 @@ body {
 
 }
 
-p { margin: 10px; }
+p { 
+    margin: 10px;
+    white-space:pre;
+}
 
 
 /* ----- scrollbar ----- */
