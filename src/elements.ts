@@ -39,6 +39,7 @@ export class Command {
 
     constructor() {
         this.command = document.createElement('div');
+        this.command.setAttribute('id','command');
         this.setText();
     }
 

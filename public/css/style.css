@@ -1,3 +1,14 @@
+/* ----- colors ----- */
+
+.background { color: #282c34 }
+.currentline { color: #99bbff }
+.normal { color: #abb2bf }
+.keyword { color: #c678dd }
+.comment { color: #5c6370 }
+.string { color: #98c379 }
+.number { color: #d19a66 }
+
+
 /* ----- style html elements -----*/
 body {
     box-sizing: border-box;
@@ -39,4 +50,9 @@ p {
     font-family: "Lucida Console", "Courier New", monospace;
     overflow: auto;
     max-height: calc(100% - 40px);
+}
+
+/* ----- command ----- */
+#command {
+    color: #99bbff;
 }
