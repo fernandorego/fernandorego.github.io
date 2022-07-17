@@ -1,6 +1,6 @@
 import { Banner, Command } from './elements.js';
 
-window.onload = function afterWebPageLoad() { 
+window.onload = function() { 
     let terminal : HTMLElement | null = document.getElementById("terminal");
     
     if (terminal != null) {
