@@ -1,11 +1,18 @@
 {
-    "compilerOptions": {
-        "module": "amd",
-        "noImplicitAny": true,
-        "removeComments": true,
-        "preserveConstEnums": true,
-        "sourceMap": true,
-        "outDir": "./build/"
-    },
-    "include": ["./ts/*"],
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es6",                                  
+
+    /* Modules */
+    "module": "es6",
+
+    /* Emit */
+    "outDir": "./public/js/",                                   
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,           
+
+    /* Type Checking */
+    "strict": true,                                     
+    "skipLibCheck": true                                 
   }
+}
