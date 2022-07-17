@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    /* Language and Environment */
+    "target": "es6",                                  
+
+    /* Modules */
+    "module": "es6",
+
+    /* Emit */
+    "outDir": "./public/js/",                                   
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,           
+
+    /* Type Checking */
+    "strict": true,                                     
+    "skipLibCheck": true                                 
+  }
+}
