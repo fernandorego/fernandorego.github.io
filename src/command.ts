@@ -26,7 +26,7 @@ export class Command {
         return this.command;
     }
 
-    static getCommandDiv(): HTMLDivElement {
+    static getNewCommandDiv(): HTMLDivElement {
         return (new Command).getCommand();
     }
 }

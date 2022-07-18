@@ -1,5 +1,4 @@
 /* ----- colors ----- */
-
 .background { color: #282c34 }
 .current-line { color: #99bbff }
 .normal { color: #abb2bf }
@@ -17,7 +16,6 @@ body {
     margin: 20px;
     border: 3px solid #c678dd;
     background: #282c34;
-
 }
 
 p { 
@@ -50,7 +48,6 @@ p {
     height: calc(100% - 40px);
     font-family: "Lucida Console", "Courier New", monospace;
     font-size: 15px;
-    margin: 10px;
 }
 
 
@@ -69,6 +66,7 @@ p {
 
 /* ----- command ----- */
 .command {
+    min-width: 740px;
     color: #abb2bf;
     margin-bottom: 10px;
 }
@@ -79,6 +77,8 @@ p {
 
 .command-text { color: #abb2bf; }
 
+
+/* ----- cursor ------ */
 .cursor {
     position: relative;
     animation: blinker 1s linear infinite;
