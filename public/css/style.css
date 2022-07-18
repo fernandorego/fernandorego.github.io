@@ -21,7 +21,7 @@ body {
 }
 
 p { 
-    margin: 10px;
+    margin: 0;
     white-space:pre;
 }
 
@@ -42,23 +42,41 @@ p {
     border: solid 3px transparent;
 }
 
-.container {
+
+/* ----- terminal ----- */
+.terminal {
     padding: 20px 20px 20px 20px;
     overflow: auto;
     height: calc(100% - 40px);
-}
-/* ----- terminal ----- */
-.terminal {
-    color: #abb2bf;
     font-family: "Lucida Console", "Courier New", monospace;
+    margin: 10px;
 }
+
+
+/* ----- banner ----- */
+.banner { 
+    color: #abb2bf;
+    margin-bottom: 10px;
+}
+
+.banner-image { color: #abb2bf }
+
+.banner-text { color: #98c379 }
+
+.penguin { color: #d19a66 }
+
 
 /* ----- command ----- */
-#command {
-    color: #99bbff;
+.command {
+    color: #abb2bf;
+    margin-bottom: 10px;
 }
 
-.blink_me {
+.command::before { content: "guest@fernandorego.io:~$ "; }
+
+#current-command { color: #99bbff !important; }
+
+.cursor {
     animation: blinker 1s linear infinite;
 }
   

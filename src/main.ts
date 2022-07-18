@@ -1,4 +1,5 @@
-import { Banner, Command } from './elements.js';
+import { Banner } from './banner.js';
+import { Command } from './command.js';
 
 window.onload = function() { 
     let terminal : HTMLElement | null = document.getElementById("terminal");
