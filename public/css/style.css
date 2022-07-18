@@ -1,7 +1,7 @@
 /* ----- colors ----- */
 
 .background { color: #282c34 }
-.currentline { color: #99bbff }
+.current-line { color: #99bbff }
 .normal { color: #abb2bf }
 .keyword { color: #c678dd }
 .comment { color: #5c6370 }
@@ -42,17 +42,26 @@ p {
     border: solid 3px transparent;
 }
 
-
+.container {
+    padding: 20px 20px 20px 20px;
+    overflow: auto;
+    height: calc(100% - 40px);
+}
 /* ----- terminal ----- */
 .terminal {
-    padding: 20px 20px 20px 20px;
     color: #abb2bf;
     font-family: "Lucida Console", "Courier New", monospace;
-    overflow: auto;
-    max-height: calc(100% - 40px);
 }
 
 /* ----- command ----- */
 #command {
     color: #99bbff;
+}
+
+.blink_me {
+    animation: blinker 1s linear infinite;
+}
+  
+@keyframes blinker {
+    50% { opacity: 0; }
 }
