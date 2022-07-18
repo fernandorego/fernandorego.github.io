@@ -9,14 +9,15 @@ export class Command {
     }
 
     setText(): void {
-        let text: HTMLSpanElement = document.createElement('span');
+        let command_text: HTMLSpanElement = document.createElement('span');
+        command_text.classList.add('command-text');
 
         let cursor: HTMLSpanElement = document.createElement('b');
         cursor.setAttribute('id','cursor');
         cursor.classList.add('cursor');
         cursor.innerHTML = '█';
         
-        this.command.appendChild(text);
+        this.command.appendChild(command_text);
         this.command.appendChild(cursor);
     }
 

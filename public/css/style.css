@@ -76,6 +76,8 @@ p {
 
 #current-command { color: #99bbff !important; }
 
+.command-text { color: #abb2bf; }
+
 .cursor {
     animation: blinker 1s linear infinite;
 }
