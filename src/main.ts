@@ -5,8 +5,6 @@ import { KeyHandler } from './key_handler.js';
 const terminal : HTMLElement = document.getElementById("terminal")!;
 
 window.onload = function() { 
-    //let terminal : HTMLElement | null = document.getElementById("terminal");
-    
     if (terminal != null) {
         terminal.appendChild(Banner.getBannerDiv());
         terminal.appendChild(Command.getNewCommandDiv());

@@ -3,7 +3,6 @@ import { Command } from './command.js';
 import { KeyHandler } from './key_handler.js';
 const terminal = document.getElementById("terminal");
 window.onload = function () {
-    //let terminal : HTMLElement | null = document.getElementById("terminal");
     if (terminal != null) {
         terminal.appendChild(Banner.getBannerDiv());
         terminal.appendChild(Command.getNewCommandDiv());
