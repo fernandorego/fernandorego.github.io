@@ -49,6 +49,7 @@ p {
     overflow: auto;
     height: calc(100% - 40px);
     font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 15px;
     margin: 10px;
 }
 
@@ -79,6 +80,7 @@ p {
 .command-text { color: #abb2bf; }
 
 .cursor {
+    position: relative;
     animation: blinker 1s linear infinite;
 }
   

@@ -15,6 +15,7 @@ export class Command {
         let cursor: HTMLSpanElement = document.createElement('b');
         cursor.setAttribute('id','cursor');
         cursor.classList.add('cursor');
+        cursor.style.left = '0px';
         cursor.innerHTML = '█';
         
         this.command.appendChild(command_text);

@@ -18,14 +18,19 @@ function keyDownHandler(event:KeyboardEvent) {
     console.log(event.key)
     switch (event.key) {
         case 'Enter':
+            Handler.enterHandler();
             break;
         case 'Backspace':
+            Handler.backspaceHandler();
             break;
         case 'Delete':
+            Handler.deleteHandler();
             break;
         case 'ArrowLeft':
+            Handler.arrowLeftHandler();
             break;
         case 'ArrowRight':
+            Handler.arrowRightHandler();
             break;
         case 'ArrowUp':
             break;
