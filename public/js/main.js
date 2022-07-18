@@ -16,7 +16,6 @@ function keyDownHandler(event) {
         case 'Enter':
             KeyHandler.enterHandler();
             terminal.appendChild(Command.getNewCommandDiv());
-            //terminal.scrollTo(0, document.body.offsetHeight);
             terminal.scrollTop = terminal.scrollHeight;
             break;
         case 'Backspace':

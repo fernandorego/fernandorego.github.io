@@ -10,13 +10,13 @@ export class Banner {
     setText(): void {
         let banner_welcome: HTMLParagraphElement = document.createElement('p');
         banner_welcome.classList.add('banner-image');
-        banner_welcome.innerHTML =  "                                                                   <span class='penguin'>    .--.     </span> \n";
-        banner_welcome.innerHTML += "██      ██  ██████ ██       ████   ████   ████  ████ ██████  ██    <span class='penguin'>   |o_o |    </span> \n";
-        banner_welcome.innerHTML += "██      ██  ██     ██     ██     ██    ██ ██  ██  ██ ██      ██    <span class='penguin'>   |\\_/ |    </span>\n";
-        banner_welcome.innerHTML += "██      ██  ████   ██     ██     ██    ██ ██      ██ ████    ██    <span class='penguin'>  //   \\ \\ </span> \n";
-        banner_welcome.innerHTML += "██  ██  ██  ██     ██     ██     ██    ██ ██      ██ ██            <span class='penguin'> (|     | )  </span>\n";
-        banner_welcome.innerHTML += "  ██  ██    ██████ ██████   ████   ████   ██      ██ ██████  ██    <span class='penguin'>/'\\_   _/`\\</span>\n";
-        banner_welcome.innerHTML += "                                                                   <span class='penguin'>\\___)=(___/ </span> \n";
+        banner_welcome.innerHTML =  "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  <span class='penguin'>    .--.     </span> \n";
+        banner_welcome.innerHTML += "░░██░░░░░░██░██████░██░░░░░░░████░░░████░░░████░░████░██████░░██░░  <span class='penguin'>   |o_o |    </span> \n";
+        banner_welcome.innerHTML += "░░██░░░░░░██░██░░░░░██░░░░░██░░░░░██░░░░██░██░░██░░██░██░░░░░░██░░  <span class='penguin'>   |\\_/ |    </span>\n";
+        banner_welcome.innerHTML += "░░██░░░░░░██░████░░░██░░░░░██░░░░░██░░░░██░██░░░░░░██░████░░░░██░░  <span class='penguin'>  //   \\ \\ </span> \n";
+        banner_welcome.innerHTML += "░░██░░██░░██░██░░░░░██░░░░░██░░░░░██░░░░██░██░░░░░░██░██░░░░░░░░░░  <span class='penguin'> (|     | )  </span>\n";
+        banner_welcome.innerHTML += "░░░░██░░██░░░██████░██████░░░████░░░████░░░██░░░░░░██░██████░░██░░  <span class='penguin'>/'\\_   _/`\\</span>\n";
+        banner_welcome.innerHTML += "░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░  <span class='penguin'>\\___)=(___/ </span> \n";
 
         let banner_text: HTMLParagraphElement = document.createElement('p');
         banner_text.classList.add('banner-text');
