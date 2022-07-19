@@ -12,8 +12,6 @@ export function proccessCommand(command) {
             return InProgress.getInProgressDiv();
         case 'banner':
             return Banner.getBannerDiv();
-        case 'clear':
-            return InProgress.getInProgressDiv();
         case 'help':
             return Help.getHelpDiv();
         default:

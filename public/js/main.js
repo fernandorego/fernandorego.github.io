@@ -12,19 +12,18 @@ window.onload = function () {
     document.addEventListener("keydown", keyDownHandler);
 };
 function keyDownHandler(event) {
-    switch (event.key) {
-        case 'Enter':
-            let current_cmd = document.getElementById('current-command');
-            let current_input = document.getElementById('input');
-            current_cmd.removeAttribute('id');
-            current_input.remove();
-            current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
+    if (event.key === 'Enter') {
+        let current_cmd = document.getElementById('current-command');
+        let current_input = document.getElementById('input');
+        current_cmd.removeAttribute('id');
+        current_input.remove();
+        current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
+        (current_input.value == 'clear') ?
+            terminal.textContent = '' :
             terminal.appendChild(proccessCommand(current_input.value));
-            terminal.appendChild(InputField.getNewInputDiv());
-            focusInput();
-            terminal.scrollTop = terminal.scrollHeight;
-            break;
-        default:
+        terminal.appendChild(InputField.getNewInputDiv());
+        focusInput();
+        terminal.scrollTop = terminal.scrollHeight;
     }
 }
 function focusInput() {

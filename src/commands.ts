@@ -13,8 +13,6 @@ export function proccessCommand(command:string):HTMLElement {
             return InProgress.getInProgressDiv();
         case 'banner':
             return Banner.getBannerDiv();
-        case 'clear':
-            return InProgress.getInProgressDiv();
         case 'help':
             return Help.getHelpDiv();
         default:
