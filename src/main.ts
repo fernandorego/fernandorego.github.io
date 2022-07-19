@@ -19,6 +19,7 @@ window.onload = function() {
 }
 
 function keyDownHandler(event:KeyboardEvent) {
+    alert(event.key);
     switch (event.key) {
         case 'Enter':
             KeyHandler.enterHandler();

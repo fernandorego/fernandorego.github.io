@@ -14,6 +14,7 @@ window.onload = function () {
     //textarea.addEventListener("keyup", keyUpHandler);
 };
 function keyDownHandler(event) {
+    alert(event.key);
     switch (event.key) {
         case 'Enter':
             KeyHandler.enterHandler();
