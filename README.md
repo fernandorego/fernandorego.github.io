@@ -1,2 +1,2 @@
 # my-web-terminal
-My personal terminal website
+My personal terminal style website using TypeScript
