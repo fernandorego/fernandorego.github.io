@@ -2,13 +2,16 @@ import { Banner } from './banner.js';
 import { Command } from './command.js';
 import { KeyHandler } from './key_handler.js';
 const terminal = document.getElementById("terminal");
+const textarea = document.getElementById("textarea");
 window.onload = function () {
     if (terminal != null) {
         terminal.appendChild(Banner.getBannerDiv());
         terminal.appendChild(Command.getNewCommandDiv());
     }
-    document.addEventListener("keydown", keyDownHandler);
-    document.addEventListener("keyup", keyUpHandler);
+    textarea.focus();
+    document.addEventListener("click", function () { textarea.focus(); });
+    textarea.addEventListener("keydown", keyDownHandler);
+    //textarea.addEventListener("keyup", keyUpHandler);
 };
 function keyDownHandler(event) {
     switch (event.key) {

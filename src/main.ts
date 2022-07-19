@@ -3,6 +3,7 @@ import { Command } from './command.js';
 import { KeyHandler } from './key_handler.js';
 
 const terminal : HTMLElement = document.getElementById("terminal")!;
+const textarea : HTMLElement = document.getElementById("textarea")!;
 
 window.onload = function() { 
     if (terminal != null) {
@@ -10,8 +11,11 @@ window.onload = function() {
         terminal.appendChild(Command.getNewCommandDiv());
     }
 
-    document.addEventListener("keydown", keyDownHandler);
-    document.addEventListener("keyup", keyUpHandler);
+    textarea.focus();
+    document.addEventListener("click", function() { textarea.focus(); });
+    
+    textarea.addEventListener("keydown", keyDownHandler);
+    //textarea.addEventListener("keyup", keyUpHandler);
 }
 
 function keyDownHandler(event:KeyboardEvent) {
