@@ -1,2 +1,2 @@
-# my-web-terminal
+# fernandorego.github.io
 My personal terminal style website using TypeScript
