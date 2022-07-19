@@ -6,9 +6,8 @@ window.onload = function () {
         terminal.appendChild(Banner.getBannerDiv());
         terminal.appendChild(Command.getNewCommandDiv());
     }
-    document.addEventListener("click", function () {
-        document.getElementById("input").focus({ preventScroll: true });
-    });
+    focusInput();
+    document.addEventListener("click", focusInput);
     document.addEventListener("keydown", keyDownHandler);
 };
 function keyDownHandler(event) {
@@ -20,9 +19,12 @@ function keyDownHandler(event) {
             current_cmd.appendChild(Command.getSpanWithText(current_input.value));
             current_input.remove();
             terminal.appendChild(Command.getNewCommandDiv());
-            document.getElementById("input").focus({ preventScroll: true });
+            focusInput();
             terminal.scrollTop = terminal.scrollHeight;
             break;
         default:
     }
+}
+function focusInput() {
+    document.getElementById("input").focus({ preventScroll: true });
 }

@@ -9,10 +9,8 @@ window.onload = function() {
         terminal.appendChild(Command.getNewCommandDiv());
     }
 
-    document.addEventListener("click", function() { 
-        document.getElementById("input")!.focus({ preventScroll: true });
-    });
-    
+    focusInput();
+    document.addEventListener("click", focusInput);
     document.addEventListener("keydown", keyDownHandler);
 }
 
@@ -27,9 +25,13 @@ function keyDownHandler(event:KeyboardEvent) {
             current_input.remove();
 
             terminal.appendChild(Command.getNewCommandDiv());
-            document.getElementById("input")!.focus({ preventScroll: true });
+            focusInput();
             terminal.scrollTop = terminal.scrollHeight;
             break;
         default :
     }
+}
+
+function focusInput():void {
+    document.getElementById("input")!.focus({ preventScroll: true });
 }

@@ -12,7 +12,6 @@ export class Command {
         let command_text: HTMLInputElement = document.createElement("input");
         command_text.setAttribute("type", "text");
         command_text.setAttribute("id", "input");
-        command_text.setAttribute("autofocus", "autofocus");
         command_text.classList.add('command-input');
 
         this.command.appendChild(command_text);
