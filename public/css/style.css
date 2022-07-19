@@ -77,7 +77,7 @@ p {
 
 #current-command { color: #99bbff !important; }
 
-.command-text { 
+.command-input { 
     width: 100%;
     padding-left: 10px;
     background: transparent;
@@ -86,6 +86,12 @@ p {
     color: #abb2bf;
     font-family: inherit;
     font-size: inherit;
+}
+
+.command-text { 
+    width: 100%;
+    padding-left: 10px;
+    color: #abb2bf;
 }
 
 

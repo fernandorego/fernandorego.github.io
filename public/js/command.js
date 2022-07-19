@@ -10,19 +10,20 @@ export class Command {
         command_text.setAttribute("type", "text");
         command_text.setAttribute("id", "input");
         command_text.setAttribute("autofocus", "autofocus");
-        command_text.classList.add('command-text');
-        /*let cursor: HTMLSpanElement = document.createElement('b');
-        cursor.setAttribute('id','cursor');
-        cursor.classList.add('cursor');
-        cursor.style.left = '0px';
-        cursor.innerHTML = '█';*/
+        command_text.classList.add('command-input');
         this.command.appendChild(command_text);
-        //this.command.appendChild(cursor);
     }
     getCommand() {
         return this.command;
     }
     static getNewCommandDiv() {
         return (new Command).getCommand();
+    }
+    static getSpanWithText(text) {
+        alert(text);
+        let command = document.createElement("span");
+        command.classList.add('command-text');
+        command.innerHTML = text;
+        return command;
     }
 }

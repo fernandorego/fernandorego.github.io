@@ -19,14 +19,15 @@ window.onload = function() {
 function keyDownHandler(event:KeyboardEvent) {
     switch (event.key) {
         case 'Enter':
-            let current:HTMLElement | null = document.getElementById('current-command');
+            let current_cmd:HTMLElement = document.getElementById('current-command')!;
+            let current_input:HTMLInputElement = <HTMLInputElement>document.getElementById('input')!;
 
-            if (current != null) {
-                current.removeAttribute('id');
-            }
+            current_cmd.removeAttribute('id');
+            current_cmd.appendChild(Command.getSpanWithText(current_input.value));
+            current_input.remove();
 
             terminal.appendChild(Command.getNewCommandDiv());
-
+            document.getElementById("input")!.focus();
             terminal.scrollTop = terminal.scrollHeight;
             break;
         default :

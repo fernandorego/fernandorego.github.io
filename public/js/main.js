@@ -14,15 +14,15 @@ window.onload = function () {
 function keyDownHandler(event) {
     switch (event.key) {
         case 'Enter':
-            let current = document.getElementById('current-command');
-            if (current != null) {
-                current.removeAttribute('id');
-            }
+            let current_cmd = document.getElementById('current-command');
+            let current_input = document.getElementById('input');
+            current_cmd.removeAttribute('id');
+            current_cmd.appendChild(Command.getSpanWithText(current_input.value));
+            current_input.remove();
             terminal.appendChild(Command.getNewCommandDiv());
+            document.getElementById("input").focus();
             terminal.scrollTop = terminal.scrollHeight;
             break;
         default:
     }
-}
-function keyUpHandler(event) {
 }
