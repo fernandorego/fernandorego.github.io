@@ -18,7 +18,7 @@ function keyDownHandler(event) {
         current_cmd.removeAttribute('id');
         current_input.remove();
         current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
-        (current_input.value == 'clear') ?
+        (current_input.value.toLowerCase() === 'clear') ?
             terminal.textContent = '' :
             terminal.appendChild(proccessCommand(current_input.value));
         terminal.appendChild(InputField.getNewInputDiv());
