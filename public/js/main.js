@@ -18,9 +18,10 @@ function keyDownHandler(event) {
         current_cmd.removeAttribute('id');
         current_input.remove();
         current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
-        (current_input.value.toLowerCase() === 'clear') ?
+        let command = current_input.value.trim().toLowerCase();
+        (command === 'clear') ?
             terminal.textContent = '' :
-            terminal.appendChild(proccessCommand(current_input.value));
+            terminal.appendChild(proccessCommand(command));
         terminal.appendChild(InputField.getNewInputDiv());
         focusInput();
         terminal.scrollTop = terminal.scrollHeight;
