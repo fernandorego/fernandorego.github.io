@@ -26,7 +26,6 @@ export class Command {
     }
 
     static getSpanWithText(text:string): HTMLSpanElement {
-        alert(text);
         let command: HTMLSpanElement = document.createElement("span");
         command.classList.add('command-text');
         command.innerHTML = text;
