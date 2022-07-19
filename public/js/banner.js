@@ -15,7 +15,7 @@ export class Banner {
         banner_welcome.innerHTML += "/_/    \\___/_/  /_/ /_/\\__,_/_/ /_/\\__,_/\\____/  /_/ |_|\\___/\\__, /\\____/   <span class='penguin'>/'\\_   _/`\\</span>\n";
         banner_welcome.innerHTML += "                                                            /____/          <span class='penguin'>\\___)=(___/ </span> \n";
         let banner_text = document.createElement('p');
-        banner_text.classList.add('banner-text');
+        banner_text.classList.add('main-text');
         banner_text.innerHTML = 'Hi! My name is <span class="current-line">Fernando Rego</span> and this is my web terminal.\n';
         banner_text.innerHTML += 'Type <span class="keyword">help</span> to display the list of all available commands';
         this.banner.appendChild(banner_welcome);

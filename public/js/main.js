@@ -1,10 +1,11 @@
 import { Banner } from './banner.js';
-import { Command } from './command.js';
+import { InputField } from './input_field.js';
+import { proccessCommand } from './commands.js';
 const terminal = document.getElementById("terminal");
 window.onload = function () {
     if (terminal != null) {
         terminal.appendChild(Banner.getBannerDiv());
-        terminal.appendChild(Command.getNewCommandDiv());
+        terminal.appendChild(InputField.getNewInputDiv());
     }
     focusInput();
     document.addEventListener("click", focusInput);
@@ -16,9 +17,10 @@ function keyDownHandler(event) {
             let current_cmd = document.getElementById('current-command');
             let current_input = document.getElementById('input');
             current_cmd.removeAttribute('id');
-            current_cmd.appendChild(Command.getSpanWithText(current_input.value));
             current_input.remove();
-            terminal.appendChild(Command.getNewCommandDiv());
+            current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
+            terminal.appendChild(proccessCommand(current_input.value));
+            terminal.appendChild(InputField.getNewInputDiv());
             focusInput();
             terminal.scrollTop = terminal.scrollHeight;
             break;

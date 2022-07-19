@@ -57,9 +57,9 @@ p {
     margin-bottom: 10px;
 }
 
-.banner-image { color: #abb2bf }
+.banner-image { color: #99bbff }
 
-.banner-text { color: #98c379 }
+.main-text { color: #abb2bf }
 
 .penguin { color: #d19a66 }
 
@@ -67,7 +67,7 @@ p {
 /* ----- command ----- */
 .command {
     min-width: 740px;
-    color: #abb2bf;
+    color: #d19a66;
     margin-bottom: 10px;
     overflow: hidden;
     display: flex;
@@ -75,7 +75,10 @@ p {
 
 .command::before { content: "guest@fernandorego.io:~$ "; }
 
-#current-command { color: #99bbff !important; }
+#current-command { 
+    color: #99bbff !important;
+    font-weight: 550;
+}
 
 .command-input { 
     width: 100%;
@@ -83,7 +86,8 @@ p {
     background: transparent;
     border: 0;
     outline: none;
-    color: #abb2bf;
+    color: #99bbff;
+    font-weight: 550;
     font-family: inherit;
     font-size: inherit;
 }
@@ -91,16 +95,11 @@ p {
 .command-text { 
     width: 100%;
     padding-left: 10px;
-    color: #abb2bf;
+    color: #d19a66;
 }
 
 
-/* ----- cursor ------ */
-.cursor {
-    position: relative;
-    animation: blinker 1s linear infinite;
-}
-  
-@keyframes blinker {
-    50% { opacity: 0; }
-}
+/* ----- elements ----- */
+.element-container { margin: 10px; }
+
+
