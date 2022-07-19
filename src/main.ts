@@ -1,9 +1,7 @@
 import { Banner } from './banner.js';
 import { Command } from './command.js';
-import { KeyHandler } from './key_handler.js';
 
 const terminal : HTMLElement = document.getElementById("terminal")!;
-const textarea : HTMLElement = document.getElementById("textarea")!;
 
 window.onload = function() { 
     if (terminal != null) {
@@ -11,43 +9,26 @@ window.onload = function() {
         terminal.appendChild(Command.getNewCommandDiv());
     }
 
-    textarea.focus();
-    document.addEventListener("click", function() { textarea.focus(); });
+    document.addEventListener("click", function() { 
+        document.getElementById("input")!.focus();
+    });
     
-    textarea.addEventListener("keydown", keyDownHandler);
-    //textarea.addEventListener("keyup", keyUpHandler);
+    document.addEventListener("keydown", keyDownHandler);
 }
 
 function keyDownHandler(event:KeyboardEvent) {
-    alert(event.key);
     switch (event.key) {
         case 'Enter':
-            KeyHandler.enterHandler();
+            let current:HTMLElement | null = document.getElementById('current-command');
+
+            if (current != null) {
+                current.removeAttribute('id');
+            }
+
             terminal.appendChild(Command.getNewCommandDiv());
 
             terminal.scrollTop = terminal.scrollHeight;
             break;
-        case 'Backspace':
-            KeyHandler.backspaceHandler();
-            break;
-        case 'Delete':
-            KeyHandler.deleteHandler();
-            break;
-        case 'ArrowLeft':
-            KeyHandler.arrowLeftHandler();
-            break;
-        case 'ArrowRight':
-            KeyHandler.arrowRightHandler();
-            break;
-        case 'ArrowUp':
-            break;
-        case 'ArrowDown':
-            break;
         default :
-            if (event.key.length === 1) { KeyHandler.letterHandler(event.key); }
     }
-}
-
-function keyUpHandler(event:KeyboardEvent) {
-    
 }

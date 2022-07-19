@@ -69,13 +69,24 @@ p {
     min-width: 740px;
     color: #abb2bf;
     margin-bottom: 10px;
+    overflow: hidden;
+    display: flex;
 }
 
 .command::before { content: "guest@fernandorego.io:~$ "; }
 
 #current-command { color: #99bbff !important; }
 
-.command-text { color: #abb2bf; }
+.command-text { 
+    width: 100%;
+    padding-left: 10px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    color: #abb2bf;
+    font-family: inherit;
+    font-size: inherit;
+}
 
 
 /* ----- cursor ------ */

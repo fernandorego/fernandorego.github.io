@@ -6,15 +6,18 @@ export class Command {
         this.setText();
     }
     setText() {
-        let command_text = document.createElement('span');
+        let command_text = document.createElement("input");
+        command_text.setAttribute("type", "text");
+        command_text.setAttribute("id", "input");
+        command_text.setAttribute("autofocus", "autofocus");
         command_text.classList.add('command-text');
-        let cursor = document.createElement('b');
-        cursor.setAttribute('id', 'cursor');
+        /*let cursor: HTMLSpanElement = document.createElement('b');
+        cursor.setAttribute('id','cursor');
         cursor.classList.add('cursor');
         cursor.style.left = '0px';
-        cursor.innerHTML = '█';
+        cursor.innerHTML = '█';*/
         this.command.appendChild(command_text);
-        this.command.appendChild(cursor);
+        //this.command.appendChild(cursor);
     }
     getCommand() {
         return this.command;
