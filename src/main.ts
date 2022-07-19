@@ -1,48 +1,40 @@
 import { Banner } from './banner.js';
-import { Command } from './command.js';
-import { KeyHandler } from './key_handler.js';
+import { InputField } from './input_field.js';
+import { proccessCommand } from './commands.js';
 
 const terminal : HTMLElement = document.getElementById("terminal")!;
 
 window.onload = function() { 
     if (terminal != null) {
         terminal.appendChild(Banner.getBannerDiv());
-        terminal.appendChild(Command.getNewCommandDiv());
+        terminal.appendChild(InputField.getNewInputDiv());
     }
 
+    focusInput();
+    document.addEventListener("click", focusInput);
     document.addEventListener("keydown", keyDownHandler);
-    document.addEventListener("keyup", keyUpHandler);
 }
 
 function keyDownHandler(event:KeyboardEvent) {
     switch (event.key) {
         case 'Enter':
-            KeyHandler.enterHandler();
-            terminal.appendChild(Command.getNewCommandDiv());
+            let current_cmd:HTMLElement = document.getElementById('current-command')!;
+            let current_input:HTMLInputElement = <HTMLInputElement>document.getElementById('input')!;
 
+            current_cmd.removeAttribute('id');
+            current_input.remove();
+            current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
+
+            terminal.appendChild(proccessCommand(current_input.value));
+
+            terminal.appendChild(InputField.getNewInputDiv());
+            focusInput();
             terminal.scrollTop = terminal.scrollHeight;
             break;
-        case 'Backspace':
-            KeyHandler.backspaceHandler();
-            break;
-        case 'Delete':
-            KeyHandler.deleteHandler();
-            break;
-        case 'ArrowLeft':
-            KeyHandler.arrowLeftHandler();
-            break;
-        case 'ArrowRight':
-            KeyHandler.arrowRightHandler();
-            break;
-        case 'ArrowUp':
-            break;
-        case 'ArrowDown':
-            break;
         default :
-            if (event.key.length === 1) { KeyHandler.letterHandler(event.key); }
     }
 }
 
-function keyUpHandler(event:KeyboardEvent) {
-    
+function focusInput():void {
+    document.getElementById("input")!.focus({ preventScroll: true });
 }
