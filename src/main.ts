@@ -10,7 +10,7 @@ window.onload = function() {
     }
 
     document.addEventListener("click", function() { 
-        document.getElementById("input")!.focus();
+        document.getElementById("input")!.focus({ preventScroll: true });
     });
     
     document.addEventListener("keydown", keyDownHandler);
@@ -27,7 +27,7 @@ function keyDownHandler(event:KeyboardEvent) {
             current_input.remove();
 
             terminal.appendChild(Command.getNewCommandDiv());
-            document.getElementById("input")!.focus();
+            document.getElementById("input")!.focus({ preventScroll: true });
             terminal.scrollTop = terminal.scrollHeight;
             break;
         default :
