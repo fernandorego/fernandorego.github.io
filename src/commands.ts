@@ -1,108 +1,32 @@
-import { Banner } from './banner.js';
+import { Banner, Social, Help, Error, InProgress, Opening } from './elements.js';
 
 export function proccessCommand(command:string):HTMLElement {
-    command = command.toLowerCase();
     switch(command) {
         case 'whoami':
-            return InProgress.getInProgressDiv();
+            return (new InProgress).getElement();
         case 'social':
-            return InProgress.getInProgressDiv();
+            return (new Social).getElement();
+        case 'github':
+            setTimeout(function() { window.open('https://github.com/fernandorego', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'facebook':
+            setTimeout(function() { window.open('https://www.facebook.com/fernandorego245', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'instagram':
+            setTimeout(function() { window.open('https://www.instagram.com/nando_reg0', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'linkedin':
+            setTimeout(function() { window.open('https://www.linkedin.com/in/fernandorego', "_blank"); }, 500);
+            return (new Opening).getElement();
         case 'projects':
-            return InProgress.getInProgressDiv();
+            return (new InProgress).getElement();
         case 'contacts':
-            return InProgress.getInProgressDiv();
+            return (new InProgress).getElement();
         case 'banner':
-            return Banner.getBannerDiv();
+            return (new Banner).getElement();
         case 'help':
-            return Help.getHelpDiv();
+            return (new Help).getElement();
         default:
-            return Error.getErrorDiv(command);
-    }
-}
-
-export class InProgress {
-    progress: HTMLDivElement;
-
-    constructor() {
-        this.progress = document.createElement('div');
-        this.progress.classList.add('element-container');
-        this.setText();
-    }
-
-    setText(): void {
-        let error_text: HTMLParagraphElement = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML  = 'In progress...\n';
-
-        this.progress.appendChild(error_text);
-    }
-
-    getInProgress(): HTMLDivElement {
-        return this.progress;
-    }
-
-    static getInProgressDiv(): HTMLDivElement {
-        return (new InProgress()).getInProgress();
-    }
-}
-
-export class Help {
-    help: HTMLDivElement;
-
-    constructor() {
-        this.help = document.createElement('div');
-        this.help.classList.add('element-container');
-        this.setText();
-    }
-
-    setText(): void {
-        let error_text: HTMLParagraphElement = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML  = '<span class="keyword">whoami  </span>\t\tAbout me\n';
-        error_text.innerHTML += '<span class="keyword">social  </span>\t\tCheck my social networks\n';
-        error_text.innerHTML += '<span class="keyword">projects</span>\t\tSome of my previous projects\n';
-        error_text.innerHTML += '<span class="keyword">contacts</span>\t\tMy spam filter will finally be used\n';
-        error_text.innerHTML += '<span class="keyword">banner  </span>\t\tDisplay the banner\n';
-        error_text.innerHTML += '<span class="keyword">clear   </span>\t\tClear terminal\n';
-        error_text.innerHTML += '<span class="keyword">help    </span>\t\tI think you already know what is this for\n';
-
-        this.help.appendChild(error_text);
-    }
-
-    getHelp(): HTMLDivElement {
-        return this.help;
-    }
-
-    static getHelpDiv(): HTMLDivElement {
-        return (new Help()).getHelp();
-    }
-}
-
-export class Error {
-    error: HTMLDivElement;
-    command: string;
-
-    constructor(command:string) {
-        this.command = command;
-        this.error = document.createElement('div');
-        this.error.classList.add('element-container');
-        this.setText();
-    }
-
-    setText(): void {
-        let error_text: HTMLParagraphElement = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML  = 'Command not found: <span class="current-line">' + this.command + '</span>\n';
-        error_text.innerHTML += '<span class="normal">Type <span class="keyword">help</span> to display the list of all available commands</span>';
-
-        this.error.appendChild(error_text);
-    }
-
-    getError(): HTMLDivElement {
-        return this.error;
-    }
-
-    static getErrorDiv(command:string): HTMLDivElement {
-        return (new Error(command)).getError();
+            return (new Error(command)).getElement();
     }
 }
