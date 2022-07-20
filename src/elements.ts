@@ -14,7 +14,7 @@ export class Banner extends MyElement {
         banner_welcome.innerHTML += "  / /_  / _ \\/ ___/ __ \\/ __ `/ __ \\/ __  / __ \\   / /_/ / _ \\/ __ `/ __ \\  <span class='penguin'>  //   \\ \\ </span> \n";
         banner_welcome.innerHTML += " / __/ /  __/ /  / / / / /_/ / / / / /_/ / /_/ /  / _, _/  __/ /_/ / /_/ /  <span class='penguin'> (|     | )  </span>\n";
         banner_welcome.innerHTML += "/_/    \\___/_/  /_/ /_/\\__,_/_/ /_/\\__,_/\\____/  /_/ |_|\\___/\\__, /\\____/   <span class='penguin'>/'\\_   _/`\\</span>\n";
-        banner_welcome.innerHTML += "                                                            /____/          <span class='penguin'>\\___)=(___/ </span> \n";
+        banner_welcome.innerHTML += "                                                            /____/          <span class='penguin'>\\___)=(___/ </span> \n\n";
 
         let banner_text: HTMLParagraphElement = document.createElement('p');
         banner_text.classList.add('main-text');
@@ -22,7 +22,6 @@ export class Banner extends MyElement {
         banner_text.innerHTML += 'Type <span class="keyword">help</span> to display the list of all available commands';
 
         this.element.appendChild(banner_welcome);
-        this.element.appendChild(document.createElement('br'));
         this.element.appendChild(banner_text);
     }
 }

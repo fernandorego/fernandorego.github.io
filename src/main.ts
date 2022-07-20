@@ -23,10 +23,9 @@ function keyDownHandler(event:KeyboardEvent) {
         current_input.remove();
         current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
         
-        let command:string = current_input.value.trim().toLowerCase();
-        (command === 'clear') ? 
+        (current_input.value.trim().toLowerCase() === 'clear') ? 
             terminal.textContent = '' :
-            terminal.appendChild(proccessCommand(command));
+            terminal.appendChild(proccessCommand(current_input.value));
 
         terminal.appendChild((new InputField).getElement());
         focusInput();
