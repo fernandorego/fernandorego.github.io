@@ -1,11 +1,10 @@
-import { Banner } from './banner.js';
-import { InputField } from './input_field.js';
 import { proccessCommand } from './commands.js';
+import { Banner, InputField } from './elements.js';
 const terminal = document.getElementById("terminal");
 window.onload = function () {
     if (terminal != null) {
-        terminal.appendChild(Banner.getBannerDiv());
-        terminal.appendChild(InputField.getNewInputDiv());
+        terminal.appendChild((new Banner).getElement());
+        terminal.appendChild((new InputField).getElement());
     }
     focusInput();
     document.addEventListener("click", focusInput);
@@ -22,7 +21,7 @@ function keyDownHandler(event) {
         (command === 'clear') ?
             terminal.textContent = '' :
             terminal.appendChild(proccessCommand(command));
-        terminal.appendChild(InputField.getNewInputDiv());
+        terminal.appendChild((new InputField).getElement());
         focusInput();
         terminal.scrollTop = terminal.scrollHeight;
     }
