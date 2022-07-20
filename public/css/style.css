@@ -23,6 +23,13 @@ p {
     white-space:pre;
 }
 
+a {
+    text-decoration: none;
+    color: #99bbff;
+}
+
+a:hover { background: rgba(255, 255, 255, 0.1); }
+
 
 /* ----- scrollbar ----- */
 ::-webkit-scrollbar {

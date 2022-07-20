@@ -42,14 +42,17 @@ export class InputField extends MyElement {
         return input;
     }
 }
-export class InProgress extends MyElement {
+export class Social extends MyElement {
     constructor() { super(); }
     setProperties() { this.element.classList.add('element-container'); }
     setText() {
-        let error_text = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML = 'In progress...\n';
-        this.element.appendChild(error_text);
+        let social_text = document.createElement('p');
+        social_text.classList.add('main-text');
+        social_text.innerHTML = '<span class="keyword">github   </span>\t\t<a href="https://github.com/fernandorego" target="_blank">github.com/fernandorego</a>\n';
+        social_text.innerHTML += '<span class="keyword">facebook </span>\t\t<a href="https://www.facebook.com/fernandorego245" target="_blank">facebook.com/fernandorego245</a>\n';
+        social_text.innerHTML += '<span class="keyword">instagram</span>\t\t<a href="https://www.instagram.com/nando_reg0" target="_blank">instagram.com/nando_reg0</a>\n';
+        social_text.innerHTML += '<span class="keyword">linkedin </span>\t\t<a href="https://www.linkedin.com/in/fernandorego" target="_blank">linkedin.com/in/fernandorego</a>\n';
+        this.element.appendChild(social_text);
     }
 }
 export class Help extends MyElement {
@@ -82,6 +85,26 @@ export class Error extends MyElement {
         error_text.classList.add('main-text');
         error_text.innerHTML = 'Command not found: <span class="current-line">' + this.command + '</span>\n';
         error_text.innerHTML += '<span class="normal">Type <span class="keyword">help</span> to display the list of all available commands</span>';
+        this.element.appendChild(error_text);
+    }
+}
+export class InProgress extends MyElement {
+    constructor() { super(); }
+    setProperties() { this.element.classList.add('element-container'); }
+    setText() {
+        let error_text = document.createElement('p');
+        error_text.classList.add('main-text');
+        error_text.innerHTML = 'In progress...\n';
+        this.element.appendChild(error_text);
+    }
+}
+export class Opening extends MyElement {
+    constructor() { super(); }
+    setProperties() { this.element.classList.add('element-container'); }
+    setText() {
+        let error_text = document.createElement('p');
+        error_text.classList.add('main-text');
+        error_text.innerHTML = 'Opening...\n';
         this.element.appendChild(error_text);
     }
 }

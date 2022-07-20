@@ -1,11 +1,23 @@
-import { Banner, Help, Error, InProgress } from './elements.js';
+import { Banner, Social, Help, Error, InProgress, Opening } from './elements.js';
 
 export function proccessCommand(command:string):HTMLElement {
     switch(command) {
         case 'whoami':
             return (new InProgress).getElement();
         case 'social':
-            return (new InProgress).getElement();
+            return (new Social).getElement();
+        case 'github':
+            setTimeout(function() { window.open('https://github.com/fernandorego', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'facebook':
+            setTimeout(function() { window.open('https://www.facebook.com/fernandorego245', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'instagram':
+            setTimeout(function() { window.open('https://www.instagram.com/nando_reg0', "_blank"); }, 500);
+            return (new Opening).getElement();
+        case 'linkedin':
+            setTimeout(function() { window.open('https://www.linkedin.com/in/fernandorego', "_blank"); }, 500);
+            return (new Opening).getElement();
         case 'projects':
             return (new InProgress).getElement();
         case 'contacts':
