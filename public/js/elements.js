@@ -54,6 +54,16 @@ export class Social extends MyElement {
         this.element.appendChild(social_text);
     }
 }
+export class Email extends MyElement {
+    constructor() { super(); }
+    setProperties() { this.element.classList.add('element-container'); }
+    setText() {
+        let email_text = document.createElement('p');
+        email_text.classList.add('main-text');
+        email_text.innerHTML = '<span class="keyword">sendmail   </span>\t\t<a href="mailto:fernandoluis.santosrego@gmail.com">fernandoluis.santosrego@gmail.com</a>\n';
+        this.element.appendChild(email_text);
+    }
+}
 export class Help extends MyElement {
     constructor() { super(); }
     setProperties() { this.element.classList.add('element-container'); }
@@ -100,9 +110,9 @@ export class Opening extends MyElement {
     constructor() { super(); }
     setProperties() { this.element.classList.add('element-container'); }
     setText() {
-        let error_text = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML = '<span>Opening...</span>\n';
-        this.element.appendChild(error_text);
+        let opening_text = document.createElement('p');
+        opening_text.classList.add('main-text');
+        opening_text.innerHTML = '<span>Opening...</span>\n';
+        this.element.appendChild(opening_text);
     }
 }
