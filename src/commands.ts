@@ -20,13 +20,13 @@ export function proccessCommand(command:string):HTMLElement {
             return (new Opening).getElement();
         case 'projects':
             return (new InProgress).getElement();
-        case 'contacts':
+        case 'email':
             return (new InProgress).getElement();
         case 'banner':
             return (new Banner).getElement();
         case 'help':
             return (new Help).getElement();
         default:
-            return (new Error(command)).getElement();
+            return (new Error((command === '') ? ' ' : command)).getElement();
     }
 }
