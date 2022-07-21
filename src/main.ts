@@ -3,9 +3,9 @@ import { Banner, InputField } from './elements.js';
 
 const terminal : HTMLElement = document.getElementById("terminal")!;
 
-window.onload = function() { 
+window.onload = async function() { 
     if (terminal != null) {
-        terminal.appendChild((new Banner).getElement());
+        await show((new Banner).getElement());
         terminal.appendChild((new InputField).getElement());
     }
 
@@ -14,7 +14,7 @@ window.onload = function() {
     document.addEventListener("keydown", keyDownHandler);
 }
 
-function keyDownHandler(event:KeyboardEvent) {
+async function keyDownHandler(event:KeyboardEvent) {
     if (event.key === 'Enter') {
         let current_cmd:HTMLElement = document.getElementById('current-command')!;
         let current_input:HTMLInputElement = <HTMLInputElement>document.getElementById('input')!;
@@ -25,7 +25,7 @@ function keyDownHandler(event:KeyboardEvent) {
         
         (current_input.value.trim().toLowerCase() === 'clear') ? 
             terminal.textContent = '' :
-            terminal.appendChild(proccessCommand(current_input.value));
+            await show(proccessCommand(current_input.value));
 
         terminal.appendChild((new InputField).getElement());
         focusInput();
@@ -36,3 +36,42 @@ function keyDownHandler(event:KeyboardEvent) {
 function focusInput():void {
     document.getElementById("input")!.focus({ preventScroll: true });
 }
+
+async function show(elem:HTMLElement) {
+    let clone:HTMLElement = <HTMLElement>elem.cloneNode(true);
+
+    for (let i = 0; i < clone.children.length; i++) {
+        if (clone.children[i].tagName === 'P') {
+            let child = <HTMLParagraphElement>clone.children[i];
+            for (let j = 0; j < child.children.length; j++) {
+                child.children[j].innerHTML= '';
+            }
+        }
+    }
+
+    terminal.appendChild(clone);
+
+    for (let i = 0; i < elem.children.length; i++) {
+        if (elem.children[i].tagName === 'P') {
+            let child = <HTMLParagraphElement>elem.children[i];
+            for (let j = 0; j < child.children.length; j++) {
+                let text:string = child.children[j].innerHTML;
+                await typeWriter(clone.children[i].children[j], text, 0);
+            }
+        }
+    }
+}
+
+async function typeWriter(elem:Element, text:string, i:number) {
+    let speed:number = 5;
+
+    if (i < text.length) {
+        elem.innerHTML += text.charAt(i);
+        if (text.charAt(i) !== ' ') {
+            await new Promise(resolve => setTimeout(resolve, speed));
+        }
+        await typeWriter(elem, text, ++i);
+    }
+
+    return;
+  }
