@@ -10,6 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import { proccessCommand } from './commands.js';
 import { Banner, InputField } from './elements.js';
 const terminal = document.getElementById("terminal");
+function focusInput() {
+    document.getElementById("input").focus({ preventScroll: true });
+}
 window.onload = function () {
     return __awaiter(this, void 0, void 0, function* () {
         if (terminal != null) {
@@ -37,9 +40,6 @@ function keyDownHandler(event) {
             terminal.scrollTop = terminal.scrollHeight;
         }
     });
-}
-function focusInput() {
-    document.getElementById("input").focus({ preventScroll: true });
 }
 function show(elem) {
     return __awaiter(this, void 0, void 0, function* () {

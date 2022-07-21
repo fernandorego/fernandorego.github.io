@@ -1,4 +1,4 @@
-import { Banner, Social, Help, Error, InProgress, Opening } from './elements.js';
+import { Banner, Social, Email, Help, Error, InProgress, Opening } from './elements.js';
 
 export function proccessCommand(command:string):HTMLElement {
     switch(command.trim().toLowerCase()) {
@@ -21,7 +21,10 @@ export function proccessCommand(command:string):HTMLElement {
         case 'projects':
             return (new InProgress).getElement();
         case 'email':
-            return (new InProgress).getElement();
+            return (new Email).getElement();
+        case 'sendmail':
+            setTimeout(window.location.href = "mailto:fernandoluis.santosrego@gmail.com", 500);
+            return (new Opening).getElement();
         case 'banner':
             return (new Banner).getElement();
         case 'help':
