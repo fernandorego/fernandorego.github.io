@@ -104,17 +104,17 @@ export class Help extends MyElement {
     setProperties(): void { this.element.classList.add('element-container'); }
 
     setText(): void {
-        let error_text: HTMLParagraphElement = document.createElement('p');
-        error_text.classList.add('main-text');
-        error_text.innerHTML  = '<span class="keyword">whoami  </span>\t\t<span>About me</span>\n';
-        error_text.innerHTML += '<span class="keyword">projects</span>\t\t<span>Some of my previous projects</span>\n';
-        error_text.innerHTML += '<span class="keyword">social  </span>\t\t<span>Check my social networks</span>\n';
-        error_text.innerHTML += '<span class="keyword">email   </span>\t\t<span>My spam filter will finally be used</span>\n';
-        error_text.innerHTML += '<span class="keyword">banner  </span>\t\t<span>Display the banner</span>\n';
-        error_text.innerHTML += '<span class="keyword">clear   </span>\t\t<span>Clear terminal</span>\n';
-        error_text.innerHTML += '<span class="keyword">help    </span>\t\t<span>I think you already know what is this for</span>\n';
+        let help_text: HTMLParagraphElement = document.createElement('p');
+        help_text.classList.add('main-text');
+        help_text.innerHTML  = '<span class="keyword">whoami  </span>\t\t<span>About me</span>\n';
+        help_text.innerHTML += '<span class="keyword">projects</span>\t\t<span>Some of my previous projects</span>\n';
+        help_text.innerHTML += '<span class="keyword">social  </span>\t\t<span>Check my social networks</span>\n';
+        help_text.innerHTML += '<span class="keyword">email   </span>\t\t<span>My spam filter will finally be used</span>\n';
+        help_text.innerHTML += '<span class="keyword">banner  </span>\t\t<span>Display the banner</span>\n';
+        help_text.innerHTML += '<span class="keyword">clear   </span>\t\t<span>Clear terminal</span>\n';
+        help_text.innerHTML += '<span class="keyword">help    </span>\t\t<span>I think you already know what is this for</span>\n';
 
-        this.element.appendChild(error_text);
+        this.element.appendChild(help_text);
     }
 }
 
