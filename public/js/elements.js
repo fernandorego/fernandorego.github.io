@@ -5,19 +5,18 @@ export class Banner extends MyElement {
     setText() {
         let banner_welcome = document.createElement('p');
         banner_welcome.classList.add('banner-image');
-        banner_welcome.innerHTML = "                                                                            <span class='penguin'>    .--.     </span> \n";
-        banner_welcome.innerHTML += "    ______                                __         ____                   <span class='penguin'>   |o_o |    </span> \n";
-        banner_welcome.innerHTML += "   / ____/__  _________  ____ _____  ____/ /___     / __ \\___  ____ _____   <span class='penguin'>   |\\_/ |    </span>\n";
-        banner_welcome.innerHTML += "  / /_  / _ \\/ ___/ __ \\/ __ `/ __ \\/ __  / __ \\   / /_/ / _ \\/ __ `/ __ \\  <span class='penguin'>  //   \\ \\ </span> \n";
-        banner_welcome.innerHTML += " / __/ /  __/ /  / / / / /_/ / / / / /_/ / /_/ /  / _, _/  __/ /_/ / /_/ /  <span class='penguin'> (|     | )  </span>\n";
-        banner_welcome.innerHTML += "/_/    \\___/_/  /_/ /_/\\__,_/_/ /_/\\__,_/\\____/  /_/ |_|\\___/\\__, /\\____/   <span class='penguin'>/'\\_   _/`\\</span>\n";
-        banner_welcome.innerHTML += "                                                            /____/          <span class='penguin'>\\___)=(___/ </span> \n";
+        banner_welcome.innerHTML = "<span>                                                                            </span><span class='penguin'>    .--.     </span> \n";
+        banner_welcome.innerHTML += "<span>    ______                                __         ____                   </span><span class='penguin'>   |o_o |    </span> \n";
+        banner_welcome.innerHTML += "<span>   / ____/__  _________  ____ _____  ____/ /___     / __ \\___  ____ _____   </span><span class='penguin'>   |\\_/ |    </span>\n";
+        banner_welcome.innerHTML += "<span>  / /_  / _ \\/ ___/ __ \\/ __ `/ __ \\/ __  / __ \\   / /_/ / _ \\/ __ `/ __ \\  </span><span class='penguin'>  //   \\ \\ </span> \n";
+        banner_welcome.innerHTML += "<span> / __/ /  __/ /  / / / / /_/ / / / / /_/ / /_/ /  / _, _/  __/ /_/ / /_/ /  </span><span class='penguin'> (|     | )  </span>\n";
+        banner_welcome.innerHTML += "<span>/_/    \\___/_/  /_/ /_/\\__,_/_/ /_/\\__,_/\\____/  /_/ |_|\\___/\\__, /\\____/   </span><span class='penguin'>/'\\_   _/`\\</span>\n";
+        banner_welcome.innerHTML += "<span>                                                            /____/          </span><span class='penguin'>\\___)=(___/ </span> \n\n";
         let banner_text = document.createElement('p');
         banner_text.classList.add('main-text');
-        banner_text.innerHTML = 'Hi! My name is <span class="current-line">Fernando Rego</span> and this is my web terminal.\n';
-        banner_text.innerHTML += 'Type <span class="keyword">help</span> to display the list of all available commands';
+        banner_text.innerHTML = '<span>Hi! My name is </span><span class="current-line">Fernando Rego</span><span> and this is my web terminal.\n</span>';
+        banner_text.innerHTML += '<span>Type </span><span class="keyword">help</span><span> to display the list of all available commands</span>';
         this.element.appendChild(banner_welcome);
-        this.element.appendChild(document.createElement('br'));
         this.element.appendChild(banner_text);
     }
 }
@@ -61,13 +60,13 @@ export class Help extends MyElement {
     setText() {
         let error_text = document.createElement('p');
         error_text.classList.add('main-text');
-        error_text.innerHTML = '<span class="keyword">whoami  </span>\t\tAbout me\n';
-        error_text.innerHTML += '<span class="keyword">social  </span>\t\tCheck my social networks\n';
-        error_text.innerHTML += '<span class="keyword">projects</span>\t\tSome of my previous projects\n';
-        error_text.innerHTML += '<span class="keyword">contacts</span>\t\tMy spam filter will finally be used\n';
-        error_text.innerHTML += '<span class="keyword">banner  </span>\t\tDisplay the banner\n';
-        error_text.innerHTML += '<span class="keyword">clear   </span>\t\tClear terminal\n';
-        error_text.innerHTML += '<span class="keyword">help    </span>\t\tI think you already know what is this for\n';
+        error_text.innerHTML = '<span class="keyword">whoami  </span>\t\t<span>About me</span>\n';
+        error_text.innerHTML += '<span class="keyword">social  </span>\t\t<span>Check my social networks</span>\n';
+        error_text.innerHTML += '<span class="keyword">projects</span>\t\t<span>Some of my previous projects</span>\n';
+        error_text.innerHTML += '<span class="keyword">contacts</span>\t\t<span>My spam filter will finally be used</span>\n';
+        error_text.innerHTML += '<span class="keyword">banner  </span>\t\t<span>Display the banner</span>\n';
+        error_text.innerHTML += '<span class="keyword">clear   </span>\t\t<span>Clear terminal</span>\n';
+        error_text.innerHTML += '<span class="keyword">help    </span>\t\t<span>I think you already know what is this for</span>\n';
         this.element.appendChild(error_text);
     }
 }
@@ -83,8 +82,8 @@ export class Error extends MyElement {
         let error_text = document.createElement('p');
         console.log(this.command);
         error_text.classList.add('main-text');
-        error_text.innerHTML = 'Command not found: <span class="current-line">' + this.command + '</span>\n';
-        error_text.innerHTML += '<span class="normal">Type <span class="keyword">help</span> to display the list of all available commands</span>';
+        error_text.innerHTML = '<span>Command not found: </span><span class="current-line">' + this.command + '</span>\n';
+        error_text.innerHTML += '<span>Type </span><span class="keyword">help</span><span> to display the list of all available commands</span>';
         this.element.appendChild(error_text);
     }
 }
@@ -94,7 +93,7 @@ export class InProgress extends MyElement {
     setText() {
         let error_text = document.createElement('p');
         error_text.classList.add('main-text');
-        error_text.innerHTML = 'In progress...\n';
+        error_text.innerHTML = '<span>In progress...</span>\n';
         this.element.appendChild(error_text);
     }
 }
@@ -104,7 +103,7 @@ export class Opening extends MyElement {
     setText() {
         let error_text = document.createElement('p');
         error_text.classList.add('main-text');
-        error_text.innerHTML = 'Opening...\n';
+        error_text.innerHTML = '<span>Opening...</span>\n';
         this.element.appendChild(error_text);
     }
 }

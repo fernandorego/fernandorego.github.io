@@ -1,7 +1,7 @@
 import { Banner, Social, Help, Error, InProgress, Opening } from './elements.js';
 
 export function proccessCommand(command:string):HTMLElement {
-    switch(command) {
+    switch(command.trim().toLowerCase()) {
         case 'whoami':
             return (new InProgress).getElement();
         case 'social':
