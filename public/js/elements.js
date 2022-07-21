@@ -63,7 +63,7 @@ export class Help extends MyElement {
         error_text.innerHTML = '<span class="keyword">whoami  </span>\t\t<span>About me</span>\n';
         error_text.innerHTML += '<span class="keyword">social  </span>\t\t<span>Check my social networks</span>\n';
         error_text.innerHTML += '<span class="keyword">projects</span>\t\t<span>Some of my previous projects</span>\n';
-        error_text.innerHTML += '<span class="keyword">contacts</span>\t\t<span>My spam filter will finally be used</span>\n';
+        error_text.innerHTML += '<span class="keyword">email   </span>\t\t<span>My spam filter will finally be used</span>\n';
         error_text.innerHTML += '<span class="keyword">banner  </span>\t\t<span>Display the banner</span>\n';
         error_text.innerHTML += '<span class="keyword">clear   </span>\t\t<span>Clear terminal</span>\n';
         error_text.innerHTML += '<span class="keyword">help    </span>\t\t<span>I think you already know what is this for</span>\n';
@@ -80,7 +80,6 @@ export class Error extends MyElement {
     setProperties() { this.element.classList.add('element-container'); }
     setText() {
         let error_text = document.createElement('p');
-        console.log(this.command);
         error_text.classList.add('main-text');
         error_text.innerHTML = '<span>Command not found: </span><span class="current-line">' + this.command + '</span>\n';
         error_text.innerHTML += '<span>Type </span><span class="keyword">help</span><span> to display the list of all available commands</span>';

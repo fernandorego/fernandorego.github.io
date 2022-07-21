@@ -3,6 +3,10 @@ import { Banner, InputField } from './elements.js';
 
 const terminal : HTMLElement = document.getElementById("terminal")!;
 
+function focusInput():void {
+    document.getElementById("input")!.focus({ preventScroll: true });
+}
+
 window.onload = async function() { 
     if (terminal != null) {
         await show((new Banner).getElement());
@@ -22,7 +26,7 @@ async function keyDownHandler(event:KeyboardEvent) {
         current_cmd.removeAttribute('id');
         current_input.remove();
         current_cmd.appendChild(InputField.getSpanWithText(current_input.value));
-        
+
         (current_input.value.trim().toLowerCase() === 'clear') ? 
             terminal.textContent = '' :
             await show(proccessCommand(current_input.value));
@@ -33,17 +37,13 @@ async function keyDownHandler(event:KeyboardEvent) {
     }
 }
 
-function focusInput():void {
-    document.getElementById("input")!.focus({ preventScroll: true });
-}
-
 async function show(elem:HTMLElement) {
     let clone:HTMLElement = <HTMLElement>elem.cloneNode(true);
 
-    for (let i = 0; i < clone.children.length; i++) {
+    for (let i:number = 0; i < clone.children.length; i++) {
         if (clone.children[i].tagName === 'P') {
-            let child = <HTMLParagraphElement>clone.children[i];
-            for (let j = 0; j < child.children.length; j++) {
+            let child: HTMLParagraphElement = <HTMLParagraphElement>clone.children[i];
+            for (let j:number = 0; j < child.children.length; j++) {
                 child.children[j].innerHTML= '';
             }
         }
@@ -51,10 +51,10 @@ async function show(elem:HTMLElement) {
 
     terminal.appendChild(clone);
 
-    for (let i = 0; i < elem.children.length; i++) {
+    for (let i:number = 0; i < elem.children.length; i++) {
         if (elem.children[i].tagName === 'P') {
-            let child = <HTMLParagraphElement>elem.children[i];
-            for (let j = 0; j < child.children.length; j++) {
+            let child: HTMLParagraphElement = <HTMLParagraphElement>elem.children[i];
+            for (let j:number = 0; j < child.children.length; j++) {
                 let text:string = child.children[j].innerHTML;
                 await typeWriter(clone.children[i].children[j], text, 0);
             }
@@ -74,4 +74,4 @@ async function typeWriter(elem:Element, text:string, i:number) {
     }
 
     return;
-  }
+}
