@@ -93,7 +93,6 @@ export class Email extends MyElement {
         email_text.classList.add('main-text');
         email_text.innerHTML  = '<span class="keyword">sendmail   </span>\t\t<a href="mailto:fernandoluis.santosrego@gmail.com">fernandoluis.santosrego@gmail.com</a>\n';
 
-
         this.element.appendChild(email_text);
     }
 }
