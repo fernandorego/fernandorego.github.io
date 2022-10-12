@@ -169,3 +169,32 @@ export class Opening extends MyElement {
         this.element.appendChild(opening_text);
     }
 }
+
+export class WhoAmI extends MyElement {
+    constructor() { super(); }
+
+    setProperties(): void { this.element.classList.add('element-container'); }
+
+    setText(): void {
+        let error_text: HTMLParagraphElement = document.createElement('p');
+        error_text.classList.add('main-text');
+        error_text.innerHTML  = "<span class='whoami-text'>Currently in the first year of master's degree in Informatics\n"
+                                    + "and Computing Engineering at Faculty of Engineering of the\n"
+                                    + "University of Porto. Enthusiastic for low-level programming,\n"
+                                    + "embedded systems and software engineering. In his leisure time,\n"
+                                    + "he has passion for playing piano or guitar and spending time\n"
+                                    + "with family and friends.</span>\n"
+                                    + "<span class='piano'>"
+                                    + "           ____                       \n"
+                                    + "          | |  \\_______     \n"
+                                    + "          | |          \\  \n"
+                                    + "   O    __|_|___________|  \n"
+                                    + "  /\\_  /____|____________)\n"
+                                    + " /   |___________________| \n"
+                                    + "/__    | )(            )(  \n"
+                                    + "| |\\  :| )(            )( \n"
+                                    + "</span>\n"
+
+        this.element.appendChild(error_text);
+    }
+}

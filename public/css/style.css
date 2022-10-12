@@ -70,6 +70,10 @@ a:hover { background: rgba(255, 255, 255, 0.1); }
 
 .penguin { color: #d19a66 }
 
+.piano { color: #c678dd }
+
+.whoami-text { color :#b7cfff }
+
 
 /* ----- command ----- */
 .command {
@@ -108,5 +112,11 @@ a:hover { background: rgba(255, 255, 255, 0.1); }
 
 /* ----- elements ----- */
 .element-container { margin: 10px; }
+
+.whoami {
+    display:block;
+    width:100%;
+    word-break:break-all;
+}
 
 
