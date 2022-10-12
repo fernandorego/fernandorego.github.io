@@ -81,7 +81,7 @@ export class Help extends MyElement {
         let help_text = document.createElement('p');
         help_text.classList.add('main-text');
         help_text.innerHTML = '<span class="keyword">whoami  </span>\t\t<span>About me</span>\n';
-        help_text.innerHTML += '<span class="keyword">cv    </span>\t\t<span>My curriculum vitae</span>\n';
+        help_text.innerHTML += '<span class="keyword">cv    </span>\t\t\t<span>My curriculum vitae</span>\n';
         help_text.innerHTML += '<span class="keyword">projects</span>\t\t<span>Some of my previous projects</span>\n';
         help_text.innerHTML += '<span class="keyword">social  </span>\t\t<span>Check my social networks</span>\n';
         help_text.innerHTML += '<span class="keyword">email   </span>\t\t<span>My spam filter will finally be used</span>\n';
