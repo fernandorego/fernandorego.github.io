@@ -3,6 +3,9 @@ export function proccessCommand(command) {
     switch (command.trim().toLowerCase()) {
         case 'whoami':
             return (new InProgress).getElement();
+        case 'cv':
+            setTimeout(function () { window.open('https://fernandorego.github.io/cv/myCV.pdf', "_blank"); }, 500);
+            return (new Opening).getElement();
         case 'projects':
             return (new Projects).getElement();
         case 'github':
