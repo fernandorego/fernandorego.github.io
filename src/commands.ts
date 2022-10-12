@@ -1,9 +1,9 @@
-import { Banner, Social, Email, Help, Error, InProgress, Opening, Projects } from './elements.js';
+import { Banner, Social, Email, Help, Error, WhoAmI, Opening, Projects } from './elements.js';
 
 export function proccessCommand(command:string):HTMLElement {
     switch(command.trim().toLowerCase()) {
         case 'whoami':
-            return (new InProgress).getElement();
+            return (new WhoAmI).getElement();
         case 'cv':
             setTimeout(function() { window.open('https://fernandorego.github.io/cv/myCV.pdf', "_blank"); }, 500);
             return (new Opening).getElement();
