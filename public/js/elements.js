@@ -133,12 +133,12 @@ export class WhoAmI extends MyElement {
     setText() {
         let error_text = document.createElement('p');
         error_text.classList.add('main-text');
-        error_text.innerHTML = "<span class='whoami-text'>Currently in the first year of master's degree in Informatics\n"
-            + "and Computing Engineering at Faculty of Engineering of the\n"
-            + "University of Porto. Enthusiastic for low-level programming,\n"
-            + "embedded systems and software engineering. In his leisure time,\n"
-            + "he has passion for playing piano or guitar and spending time\n"
-            + "with family and friends.</span>\n"
+        error_text.innerHTML = "<span class='whoami-text'>Fernando Rego completed his Master’s degree in Informatics and Computing Engineering\n"
+            + "at the Faculty of Engineering of the University of Porto in 2024.\n"
+            + "During his academic journey, he served as a teaching assistant and began a research\n"
+            + "scholarship, marking the beginning of his professional career. Currently, he is a researcher \n"
+            + "at Fraunhofer Portugal AICOS, focusing primarily on embedded systems, distributed systems,\n"
+            + "and TinyML by integrating Machine Learning into Internet of Things (IoT) solutions.</span>\n"
             + "<span class='piano'>"
             + "           ____                       \n"
             + "          | |  \\_______     \n"
