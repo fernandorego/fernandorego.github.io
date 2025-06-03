@@ -4,7 +4,7 @@ export function proccessCommand(command) {
         case 'whoami':
             return (new WhoAmI).getElement();
         case 'cv':
-            setTimeout(function () { window.open('https://fernandorego.github.io/cv/myCV.pdf', "_blank"); }, 500);
+            setTimeout(function () { window.open('https://fernandorego.github.io/cv/CV_Fernando_Rego.pdf', "_blank"); }, 500);
             return (new Opening).getElement();
         case 'projects':
             return (new Projects).getElement();
